@@ -1,0 +1,35 @@
+name: Python application Forms
+
+on:
+  push:
+    branches:
+      - "main"  
+  pull_request:
+    branches:
+      - "main" 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  
+
+      - name: Set up Python
+        uses: actions/setup-python@v2  
+        with:
+          python-version: '3.9'  
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv  # Cria um ambiente virtual
+          source venv/bin/activate  # Ativa o ambiente virtual
+          pip install --upgrade pip  # Atualiza o pip
+          pip install -r requirements.txt  # Instala as dependências do projeto
+
+      - name: Deploy to Render
+        run: |
+          curl -fsSL https://render.com/scripts/deploy.sh | bash  
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }} 
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }} 
