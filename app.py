@@ -83,6 +83,8 @@ def predict():
     except Exception as e:
         print(f"Erro ao processar a previsão: {str(e)}")
         return jsonify(error=f"Erro ao processar a previsão: {str(e)}"), 400
+        
+port = int(os.environ.get("PORT", 5000))  
 
-if __name__ == '__main__':
-    app.run(port=int(os.getenv('PORT', 5500)), debug=False)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=port) 
