@@ -1,0 +1,96 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0A252C;
+  color: #E1DFDF;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 350px;
+}
+
+.logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: auto;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  color: #E1DFDF;
+  margin: 1rem 0 1.5rem 0; 
+  text-align: center;
+  font-weight: bold;
+  display: block;
+}
+
+form {
+  margin: 2rem;
+  background-color: #123840;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo dos labels */
+label {
+  display: block;
+  margin-top: 0.8rem;
+  color: #E1DFDF;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+select, input {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.4rem 0 0.8rem 0;
+  border: none;
+  border-radius: 6px;
+  background-color: #0A252C; 
+  color: #E1DFDF; 
+  font-size: 0.9rem;
+  -webkit-appearance: none;
+  -moz-appearance: none; 
+  appearance: none;
+}
+
+select:focus, input:focus {
+  outline: 2px solid #AF9D7E; 
+}
+
+form button {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #AF9D7E;
+  color: #123840;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #8F7D5E;
+}
